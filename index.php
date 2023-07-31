@@ -273,7 +273,7 @@
             <tr>
                 <td class="type"><?= strtoupper($type) ?></td>
                 <td class="value"><?= $value ?></td>
-                <?php if (!empty($token['name'])) : ?>
+                <?php if (!empty($name)) : ?>
                     <td class="name"><?= $name ?></td>
                 <?php endif; ?>
             </tr>
