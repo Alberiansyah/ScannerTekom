@@ -42,6 +42,12 @@
 <body>
     <h1>Pascal Scanner Output</h1>
 
+    <form method="post">
+        <textarea name="pascalCode" rows="10" cols="80"></textarea>
+        <br>
+        <input type="submit" value="Scan">
+    </form>
+
     <?php
 
     function scanPascalCode($code)
@@ -255,6 +261,23 @@
         $tokenData = array('type' => $token['type'], 'value' => $token['value']);
         $tokenData['name'] = getTokenName($token);
         $tokenContainer[] = $tokenData;
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $pascalCode = $_POST['pascalCode'];
+        $tokens = scanPascalCode($pascalCode);
+
+        $tokenContainer = array();
+        // pemberian tipe token
+        foreach ($tokens as $token) {
+            $tokenData = array('type' => $token['type'], 'value' => $token['value']);
+            $tokenData['name'] = getTokenName($token);
+            $tokenContainer[] = $tokenData;
+        }
+    } else {
+        // Jika halaman pertama kali dimuat, inisialisasi variabel
+        $pascalCode = "";
+        $tokenContainer = array();
     }
 
     ?>
