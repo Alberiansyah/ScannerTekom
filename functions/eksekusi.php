@@ -209,11 +209,24 @@ if ($isAjaxRequest) :
     $tokens = scanPascalCode($pascalCode);
 
     $tokenContainer = array();
+
+    $tokenCounter = array(); // Initialize token counters
+
     // pemberian tipe token
     foreach ($tokens as $token) {
         $tokenData = array('type' => $token['type'], 'value' => $token['value']);
         $tokenData['name'] = getTokenName($token);
         $tokenContainer[] = $tokenData;
+
+        // Increment the token counter
+        $tokenType = $tokenData['name'];
+        if (!empty($tokenType)) {
+            if (!isset($tokenCounter[$tokenType])) {
+                $tokenCounter[$tokenType] = 1;
+            } else {
+                $tokenCounter[$tokenType]++;
+            }
+        }
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -234,22 +247,30 @@ endif;
 ?>
 
 <div class="col-12">
-    <table class="table table-hover table-responsive">
+
+    <div class="d-flex justify-content-center">
+        <h4>Token Counter</h4>
+    </div>
+    <?php foreach ($tokenCounter as $tokenType => $count) : ?>
+        <span class="badge text-bg-primary hasilToken" style="cursor: pointer;"><?= "$tokenType: $count\n"; ?></span>
+    <?php endforeach; ?>
+    <table class="table table-hover table-responsive mt-3">
         <tr>
             <th>Token Tipe</th>
             <th>Token Value</th>
             <th>Token Name</th>
         </tr>
-        <?php foreach ($tokenContainer as $token) :
+        <?php
+        foreach ($tokenContainer as $token) :
             $type = $token['type'];
             $value = htmlspecialchars($token['value']);
             $name = htmlspecialchars($token['name']);
         ?>
             <tr>
-                <td class="type text-primary"><?= strtoupper($type) ?></td>
-                <td class="value text-success"><?= $value ?></td>
+                <td class="type text-primary highlightable"><?= strtoupper($type) ?></td>
+                <td class="value text-success highlightable"><?= $value ?></td>
                 <?php if (!empty($name)) : ?>
-                    <td class="name text-danger"><?= $name ?></td>
+                    <td class="name text-danger highlightable"><?= $name ?></td>
                 <?php endif; ?>
             </tr>
         <?php endforeach; ?>

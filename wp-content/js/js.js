@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function(){    
 
     editor.getSession().setMode("ace/mode/javascript");
 
@@ -9,15 +9,25 @@ $(document).ready(function(){
         editor.session.setMode("ace/mode/pascal");
 
         let value = editor.getValue();
-
-        console.log(value);
-
         if(value == ''){
             editor.getValue('')
             $(".isi").load(location.href+" .isi>*","");
         }else{
             $(".isi").load('functions/eksekusi.php?code=' + encodeURIComponent(value));
         }
+    });
+
+    $(document).on("click", ".hasilToken", function() {
+        let hasilToken = $(this).text();
+        $(this).toggleClass("bg-warning");
+        let tokenNan = hasilToken.replace(/\d/g, '')
+        let tokenNama = tokenNan.replace(/[:\s]/g, '')
+        var tokenToHighlight = tokenNama;
+          
+        // Mencari semua elemen dengan class "highlightable" yang berisi teks yang sesuai
+        $(".highlightable:contains('" + tokenToHighlight + "')").each(function() {
+            $(this).toggleClass("bg-warning"); 
+        });
     });
 
 });
