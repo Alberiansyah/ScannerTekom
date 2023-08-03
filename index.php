@@ -17,18 +17,9 @@
         <div class="row">
 
             <div class="col-12">
-                <!-- <form method="post">
-                    <textarea class="form-control" name="pascalCode" id="pascalCode"></textarea>
-
-                    <br>
-                    <button onclick="executePascalCode()">Execute</button>
-
-                </form> -->
                 <div class="reset">
                     <div id="editor" style="height: 300px; width: 100%;"></div><br>
-                    <button class="btn btn-primary eksekusi">Eksekusi</button>
                 </div>
-                <!-- <button onclick="copyCode()">Copy Code</button> -->
 
                 <div class="isi">
                     <div class="col-12">
@@ -73,25 +64,6 @@
     var initialCode = ``;
 
     editor.setValue(initialCode);
-</script>
-
-<script>
-    function executeCode() {
-        var code = editor.getValue();
-        // Lakukan sesuatu dengan kode Pascal, misalnya kirim ke server untuk dieksekusi di sana.
-    }
-
-    function copyCode() {
-        var code = editor.getValue();
-        navigator.clipboard.writeText(code).then(
-            function() {
-                alert("Kode berhasil disalin!");
-            },
-            function() {
-                alert("Gagal menyalin kode.");
-            }
-        );
-    }
 </script>
 
 </html>

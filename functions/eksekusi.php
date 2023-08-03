@@ -168,8 +168,6 @@ function getTokenName($token)
 
 
 $pascalCode = $_GET['code'];
-
-
 // Contoh penggunaan
 
 // $pascalCode = '
