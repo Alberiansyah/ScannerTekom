@@ -4,7 +4,7 @@ function scanPascalCode($code)
 {
     $tokens = array();
     $keywords = array(
-        'program', 'var', 'integer', 'real', 'begin', 'end', 'if', 'then',
+        'program', 'uses', 'crt', 'var', 'integer', 'real', 'begin', 'end', 'if', 'then',
         'else', 'while', 'do', 'for', 'to', 'downto', 'repeat', 'until',
         'function', 'procedure', 'array', 'of', 'not', 'and', 'or', 'div', 'mod', 'writeln'
     );
@@ -120,6 +120,8 @@ function getTokenName($token)
         ']' => 'T_RBRACKET',
         ',' => 'T_COMMA',
         'program' => 'T_PROGRAM',
+        'uses' => 'T_USES',
+        'crt' => 'T_CRT',
         'var' => 'T_VAR',
         'integer' => 'T_INTEGER',
         'real' => 'T_REAL',

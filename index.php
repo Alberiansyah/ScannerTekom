@@ -1,4 +1,3 @@
-<?php require __DIR__ . "/functions/function.php"; ?>
 <!DOCTYPE html>
 <html>
 
@@ -24,30 +23,6 @@
                 </div>
 
                 <div class="isi">
-                    <?php if ($tokenContainer < 1) : ?>
-                        <div class="col-12">
-                            <table class="table table-hover table-responsive">
-                                <tr>
-                                    <th>Token Tipe</th>
-                                    <th>Token Value</th>
-                                    <th>Token Name</th>
-                                </tr>
-                                <?php foreach ($tokenContainer as $token) :
-                                    $type = $token['type'];
-                                    $value = htmlspecialchars($token['value']);
-                                    $name = htmlspecialchars($token['name']);
-                                ?>
-                                    <tr>
-                                        <td class="type text-primary"><?= strtoupper($type) ?></td>
-                                        <td class="value text-white"><?= $value ?></td>
-                                        <?php if (!empty($name)) : ?>
-                                            <td class="name text-danger"><?= $name ?></td>
-                                        <?php endif; ?>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </table>
-                        </div>
-                    <?php endif; ?>
                 </div>
             </div>
 
