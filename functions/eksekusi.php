@@ -170,40 +170,7 @@ function getTokenName($token)
 
 
 $pascalCode = $_GET['code'];
-// Contoh penggunaan
 
-// $pascalCode = '
-//     program HelloWorld;
-//     var
-//         x, y: integer;
-//     begin
-//         x := 10;
-//         y := x - 5;
-//         if y > 10 then
-//             writeln("Greater than 10")
-//         else
-//             writeln("Less than or equal to 10");
-//     end.
-// ';
-
-// $pascalCode = "
-//     program PenghitungPersegi;
-
-//     var
-//       sisi, luas: integer;
-
-//     begin
-//       writeln('Program Penghitung Luas Persegi');
-//       write('Masukkan panjang sisi persegi: ');
-//       readln(sisi);
-
-//       luas := sisi * sisi;
-
-//       writeln('Luas persegi dengan sisi ', sisi, ' adalah ', luas);
-//       readln;
-//     end.
-
-//     ";
 
 $isAjaxRequest = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
 if ($isAjaxRequest) :
