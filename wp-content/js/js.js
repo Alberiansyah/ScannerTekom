@@ -18,11 +18,12 @@ $(document).ready(function(){
     });
 
     $(document).on("click", ".hasilToken", function() {
+
         let hasilToken = $(this).text();
         $(this).toggleClass("bg-warning");
         let tokenNan = hasilToken.replace(/\d/g, '')
         let tokenNama = tokenNan.replace(/[:\s]/g, '')
-        var tokenToHighlight = tokenNama;
+        let tokenToHighlight = tokenNama;
           
         // Mencari semua elemen dengan class "highlightable" yang berisi teks yang sesuai
         $(".highlightable:contains('" + tokenToHighlight + "')").each(function() {
