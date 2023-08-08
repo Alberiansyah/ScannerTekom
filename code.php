@@ -39,11 +39,11 @@
                         <h5 class="card-title"><b>Menghitung Persegi</b></h5>
                         <pre>
     <code class="language-pascal">
-    program HitungPersegi;
-    uses crt;
-    var
+program HitungPersegi;
+uses crt;
+var
     sisi, luas, keliling: real;
-    begin
+begin
     write('Masukkan panjang sisi persegi: ');
     readln(sisi);
     luas := sisi * sisi;
@@ -51,7 +51,7 @@
     writeln('Luas persegi: ', luas:0:2);
     writeln('Keliling persegi: ', keliling:0:2);
     readln;
-    end.
+end.
     </code>
 </pre>
                     </div>
@@ -63,11 +63,11 @@
                         <h5 class="card-title"><b>Menghitung Segitiga</b></h5>
                         <pre>
     <code class="language-pascal">
-    program HitungSegitiga;
-    uses crt;
-    var
+program HitungSegitiga;
+uses crt;
+var
     alas, tinggi, sisiA, sisiB, sisiC, luas, keliling: integer;
-    begin
+begin
     write('Masukkan panjang alas segitiga: ');
     readln(alas);
     write('Masukkan tinggi segitiga: ');
@@ -83,7 +83,7 @@
     writeln('Luas segitiga: ', luas);
     writeln('Keliling segitiga: ', keliling);
     readln;
-    end.
+end.
     </code>
 </pre>
                     </div>
@@ -95,11 +95,11 @@
                         <h5 class="card-title"><b>Menghitung Balok</b></h5>
                         <pre>
     <code class="language-pascal">
-    program HitungBalok;
-    uses crt;
-    var
+program HitungBalok;
+uses crt;
+var
     panjang, lebar, tinggi, volume, luas_permukaan: real;
-    begin
+begin
     write('Masukkan panjang balok: ');
     readln(panjang);
     write('Masukkan lebar balok: ');
@@ -111,7 +111,7 @@
     writeln('Volume balok: ', volume:0:2);
     writeln('Luas permukaan balok: ', luas_permukaan:0:2);
     readln;
-    end.
+end.
     </code>
 </pre>
                     </div>
